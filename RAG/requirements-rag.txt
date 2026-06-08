@@ -1,0 +1,16 @@
+pydantic
+numpy
+pandas
+pillow
+sentence-transformers
+faiss-cpu
+chromadb
+transformers
+accelerate
+bitsandbytes
+torch
+pytest
+python-dotenv
+sqlalchemy
+# torchvision is intentionally not pinned here in this sandbox because the preinstalled build failed to import.
+# Install it in your real GPU environment only if your VLM pipeline requires it, matching your torch/CUDA version.

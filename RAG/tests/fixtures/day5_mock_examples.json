@@ -1,0 +1,71 @@
+[
+  {
+    "id": "explain_pass_with_frames",
+    "kind": "explain",
+    "input": {
+      "verdict": "violence",
+      "confidence": 0.91,
+      "packet_summary": "Evidence describes two people pushing near a chair.",
+      "retrieved_references": [
+        {
+          "reference_id": "ref-violence-contact",
+          "source": "guardian-eye-guideline",
+          "snippet": "Use cautious language for person and motion claims."
+        }
+      ],
+      "frames_ref": ["frame_01.jpg", "frame_02.jpg"]
+    },
+    "expected_status": "passed"
+  },
+  {
+    "id": "explain_text_only_fallback",
+    "kind": "explain",
+    "input": {
+      "verdict": "non-violence",
+      "confidence": 0.74,
+      "packet_summary": "Evidence describes normal activity without violent contact.",
+      "retrieved_references": [],
+      "frames_ref": []
+    },
+    "expected_status": "passed"
+  },
+  {
+    "id": "explain_regenerate_required",
+    "kind": "explain",
+    "input": {
+      "verdict": "violence",
+      "confidence": 0.94,
+      "packet_summary": "Evidence describes rapid motion between two people.",
+      "retrieved_references": [],
+      "frames_ref": ["frame_01.jpg"],
+      "mock_narrative": "No violence occurred. The classifier confidence is 0.80."
+    },
+    "expected_status": "regenerate_required"
+  },
+  {
+    "id": "ask_historical_stored_records",
+    "kind": "ask",
+    "question": "Tell me about violent knife incidents last week",
+    "records": [
+      {
+        "incident_id": "inc-knife-001",
+        "verdict": "violence",
+        "confidence": 0.89,
+        "packet_summary": "Stored packet describes a knife and rapid movement.",
+        "narrative": "Stored narrative says the classifier result remained violence with cautious wording.",
+        "timestamp": "2026-06-06T10:00:00",
+        "weapons": ["knife"]
+      },
+      {
+        "incident_id": "inc-bottle-002",
+        "verdict": "violence",
+        "confidence": 0.82,
+        "packet_summary": "Stored packet describes a bottle.",
+        "narrative": "Stored narrative mentions a bottle.",
+        "timestamp": "2026-06-07T10:00:00",
+        "weapons": ["bottle"]
+      }
+    ],
+    "expected_matched_incidents": ["inc-knife-001"]
+  }
+]
