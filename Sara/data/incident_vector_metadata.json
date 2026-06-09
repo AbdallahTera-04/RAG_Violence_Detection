@@ -1,0 +1,42 @@
+[
+  {
+    "incident_id": "incident-001",
+    "text": "violence confidence 0.91 two people were detected in a high-confidence interaction window. the classifier output indicates a likely violent interaction."
+  },
+  {
+    "incident_id": "046b17a3-a04d-4c9a-aaa9-68f596f546f6",
+    "text": "violence confidence 0.91 two people were detected in a high-confidence interaction window. the classifier output indicates a likely violent interaction."
+  },
+  {
+    "incident_id": "2fa50af9-f6cc-4768-a6ee-1ef5ff58b017",
+    "text": "violence confidence 0.91 bottle bottle fight detected. violent interaction detected."
+  },
+  {
+    "incident_id": "3c3b24a2-a536-4d39-8c75-cd0cdf897a8c",
+    "text": "violence confidence 0.91 bottle bottle fight detected. violent interaction detected."
+  },
+  {
+    "incident_id": "68f9d294-fc7a-4ee7-bc96-15127bb7c2df",
+    "text": "violence confidence 0.91 bottle bottle fight detected. violent interaction detected."
+  },
+  {
+    "incident_id": "e8f631fc-7e64-491d-997c-d6e2a7715d77",
+    "text": "violence confidence 0.91 bottle bottle fight detected. violent interaction detected."
+  },
+  {
+    "incident_id": "89fa2520-292a-4ffd-a310-a369f1447a77",
+    "text": "violence confidence 0.91 bottle bottle fight detected. violent interaction detected."
+  },
+  {
+    "incident_id": "dbe15a89-942e-433f-9d9b-bcff38769788",
+    "text": "violence confidence 0.91 bottle bottle fight detected. violent interaction detected."
+  },
+  {
+    "incident_id": "b680eac7-b9fb-4498-8e48-c288c2df3d98",
+    "text": "violence confidence 0.91 bottle bottle fight detected. violent interaction detected."
+  },
+  {
+    "incident_id": "8249c97b-20c3-4e81-8e58-7b08002e65d4",
+    "text": "violence confidence 0.91 bottle bottle fight detected. violent interaction detected."
+  }
+]
