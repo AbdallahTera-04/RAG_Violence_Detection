@@ -1,0 +1,18 @@
+[
+  {
+    "title": "evaluation_caveats",
+    "text": "Classifier outputs clip-level predictions only.\n\nTiming claims are geometry-derived.\n\nPerson-level attribution is heuristic.\n\nThe VLM must not override classifier verdicts."
+  },
+  {
+    "title": "examples",
+    "text": "Example 1:\n\nTwo individuals rapidly approached each other and physical contact occurred.\n\nViolence detected.\n\n---\n\nExample 2:\n\nPeople stood and talked without aggressive actions.\n\nNon-violence detected."
+  },
+  {
+    "title": "non_violence",
+    "text": "Walking\n\nConversation\n\nHandshake\n\nEating\n\nStanding\n\nHorse riding\n\nPeople gathering peacefully"
+  },
+  {
+    "title": "violence_taxonomy",
+    "text": "Bare-hand fight\n\nWeapon involved fight\n\nGroup assault\n\nAggressive pushing\n\nPunching\n\nKicking\n\nPhysical confrontation"
+  }
+]
