@@ -1,0 +1,118 @@
+{
+  "HF": {
+    "display_name": "Hockey Fight",
+    "checkpoint": "train_output_HF/runs_hf/E_full_qgf_fixed/best.pt",
+    "metrics": "train_output_HF/runs_hf/E_full_qgf_fixed/test_metrics.json",
+    "decision_threshold": 0.70,
+    "calibrated_threshold": 0.77,
+    "description": "Balanced, homogeneous ice-hockey broadcast clips. This checkpoint is specialized for the visually distinctive rink and sports-broadcast domain.",
+    "profile_basis": "Public Hockey Fight dataset description plus local project documentation.",
+    "dataset_notes": {
+      "public_dataset": "1,000 clips: 500 fight and 500 non-fight hockey clips.",
+      "trained_distribution": "Balanced homogeneous hockey-broadcast clips.",
+      "limitations": "A saturated domain-specific baseline; not evidence of broad real-world generalization."
+    },
+    "sources": [
+      "https://doi.org/10.1007/978-3-642-23678-5_38",
+      "local:repo_tera_content.md"
+    ],
+    "context_keywords": [
+      "hockey", "ice rink", "rink", "ice hockey", "arena boards",
+      "hockey uniform", "hockey broadcast", "hockey match"
+    ],
+    "specification_tags": {
+      "environment": ["arena", "ice rink", "sports venue"],
+      "source": ["broadcast", "sports footage"],
+      "camera": ["broadcast", "tracking"],
+      "clip_structure": ["short event clip", "broadcast excerpt"]
+    },
+    "feature_profile": {
+      "duration_s": {"center": 2.0, "tolerance": 5.0},
+      "fps": {"center": 25.0, "tolerance": 15.0},
+      "aspect_ratio": {"center": 1.50, "tolerance": 0.45},
+      "brightness": {"center": 0.62, "tolerance": 0.30},
+      "motion_intensity": {"center": 0.12, "tolerance": 0.13},
+      "camera_motion": {"center": 0.07, "tolerance": 0.11},
+      "scene_change_rate": {"center": 0.04, "tolerance": 0.10}
+    }
+  },
+  "NTU": {
+    "display_name": "NTU CCTV-Fights Window Conversion",
+    "checkpoint": "train_output_NTU/runs_ntu/E_full_qgf_fixed/best.pt",
+    "metrics": "train_output_NTU/runs_ntu/E_full_qgf_fixed/test_metrics.json",
+    "decision_threshold": 0.08,
+    "calibrated_threshold": 0.21,
+    "description": "Five-second windows generated from NTU CCTV-Fights source videos. Positives overlap annotated fight intervals; hard negatives come from non-fight intervals in the same videos.",
+    "profile_basis": "Published NTU CCTV-Fights description plus the exact local conversion and source diagnostics used for this checkpoint.",
+    "dataset_notes": {
+      "public_dataset": "1,000 fight-containing videos with temporal fight annotations and an official 500/250/250 video split.",
+      "trained_distribution": "4,940 balanced five-second windows. Positive and hard-negative windows come from the same source videos.",
+      "source_mix": "Local diagnostics: CCTV 2,033; Mobile 2,830; Car 24; Other 49.",
+      "limitations": "Annotation boundaries and unlabeled violence can make some windows ambiguous."
+    },
+    "sources": [
+      "https://arxiv.org/abs/2205.11394",
+      "https://arxiv.org/abs/2002.04355",
+      "local:repo_tera_content.md",
+      "local:train_output_NTU/runs_ntu/diagnostics/source_base_rate.csv"
+    ],
+    "context_keywords": [
+      "cctv", "surveillance", "security camera", "mobile recording",
+      "car camera", "continuous footage", "uncut footage", "fight interval",
+      "before the incident", "after the incident"
+    ],
+    "specification_tags": {
+      "environment": ["street", "indoor", "outdoor", "public space"],
+      "source": ["cctv", "mobile", "car", "surveillance"],
+      "camera": ["fixed", "wide angle", "mobile"],
+      "clip_structure": ["five second window", "continuous footage", "uncut footage"]
+    },
+    "feature_profile": {
+      "duration_s": {"center": 5.0, "tolerance": 1.0},
+      "fps": {"center": 24.0, "tolerance": 18.0},
+      "aspect_ratio": {"center": 1.65, "tolerance": 0.50},
+      "brightness": {"center": 0.46, "tolerance": 0.40},
+      "motion_intensity": {"center": 0.07, "tolerance": 0.13},
+      "camera_motion": {"center": 0.025, "tolerance": 0.10},
+      "scene_change_rate": {"center": 0.015, "tolerance": 0.08}
+    }
+  },
+  "RLVS": {
+    "display_name": "Real Life Violence Situations",
+    "checkpoint": "train_output_RLVS/runs_rlvs/E_full_qgf_fixed/best.pt",
+    "metrics": "train_output_RLVS/runs_rlvs/E_full_qgf_fixed/test_metrics.json",
+    "decision_threshold": 0.21,
+    "calibrated_threshold": 0.11,
+    "description": "Balanced short real-world violence and non-violence clips collected from varied web footage. The trained split contains scene re-cuts and a motion-presence shortcut.",
+    "profile_basis": "Published RLVS descriptions plus local split-integrity and model documentation.",
+    "dataset_notes": {
+      "public_dataset": "2,000 balanced clips: 1,000 violence and 1,000 non-violence videos.",
+      "trained_distribution": "Seeded balanced 80/10/10 split of diverse short web clips.",
+      "limitations": "Local audit found near-duplicate scene re-cuts and a motion-presence shortcut."
+    },
+    "sources": [
+      "https://www.kaggle.com/datasets/mohamedmustafa/real-life-violence-situations-dataset",
+      "https://arxiv.org/abs/2408.02033",
+      "local:repo_tera_content.md"
+    ],
+    "context_keywords": [
+      "web video", "internet video", "real life clip", "viral video",
+      "handheld phone", "edited clip", "short event clip", "scene recut"
+    ],
+    "specification_tags": {
+      "environment": ["street", "indoor", "outdoor", "public space"],
+      "source": ["web video", "phone", "internet video"],
+      "camera": ["handheld", "moving"],
+      "clip_structure": ["short event clip", "edited clip", "scene recut"]
+    },
+    "feature_profile": {
+      "duration_s": {"center": 5.0, "tolerance": 9.0},
+      "fps": {"center": 25.0, "tolerance": 17.0},
+      "aspect_ratio": {"center": 1.70, "tolerance": 0.50},
+      "brightness": {"center": 0.48, "tolerance": 0.40},
+      "motion_intensity": {"center": 0.11, "tolerance": 0.15},
+      "camera_motion": {"center": 0.09, "tolerance": 0.14},
+      "scene_change_rate": {"center": 0.04, "tolerance": 0.11}
+    }
+  }
+}
